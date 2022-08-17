@@ -1,0 +1,26 @@
+.base {
+    height: 100vh;
+    background: aqua;
+}
+
+.container, .tracker {
+    position: absolute;
+}
+
+.container {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #333;
+}
+
+.tracker {
+    width: 10px;
+    height: 10px;
+    left: 0;
+    top: 0;
+    background-color: black;
+    transform: translate(calc(-50% + 190px * var(--x)), calc(-50% + 190px * var(--y)));
+}
