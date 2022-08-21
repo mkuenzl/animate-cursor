@@ -1,26 +1,40 @@
-.base {
-    height: 100vh;
-    background: aqua;
-}
-
-.container, .tracker {
+.tracker {
     position: absolute;
 }
 
 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.eye {
     width: 200px;
     height: 200px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0%, 0%);
     border: 3px solid #333;
+    background-color: azure;
+    border-radius: 40%;
+}
+
+.tracker_old {
+    width: 10px;
+    height: 10px;
+    left: 5px;
+    top: 5px;
+    background-color: black;
+    transform: translate(calc(-50% + 185px * var(--x)), calc(-50% + 185px * var(--y)));
 }
 
 .tracker {
-    width: 10px;
-    height: 10px;
-    left: 0;
-    top: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 30px;
+    top: 30px;
+    border-radius: 40%;
     background-color: black;
-    transform: translate(calc(-50% + 190px * var(--x)), calc(-50% + 190px * var(--y)));
+    transform: translate(calc(-50%  + 130px * var(--x)), calc(-50% + 130px * var(--y)));
 }
