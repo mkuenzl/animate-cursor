@@ -6,9 +6,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     min-height: 100vh;
 }
+
+.face  {
+    display: flex;
+    flex-direction: column;
+}
+
+.eyebrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.brow {
+    display: flex;
+    width:200px; height:50px;  
+    border:solid 5px #000;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 50%/45px 45px 0 0;
+    transform: translate(calc(0% + 1px * var(--x)), calc(-50% + 50px * var(--y)));
+}
+
+.eyes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
 .eye {
     width: 200px;
@@ -19,14 +44,13 @@
     border-radius: 40%;
 }
 
-.tracker_old {
-    width: 10px;
-    height: 10px;
-    left: 5px;
-    top: 5px;
-    background-color: black;
-    transform: translate(calc(-50% + 185px * var(--x)), calc(-50% + 185px * var(--y)));
-}
+.mouth{
+    display: flex;
+    width:600px; height:100px;  
+    border:solid 5px #000;
+    border-color: transparent transparent #000 transparent;
+    border-radius: 0 0 240px 40%/75px;
+  }
 
 .tracker {
     position: absolute;

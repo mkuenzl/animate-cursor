@@ -2,16 +2,25 @@ import React, { useEffect, useState } from "react";
 import "./Block.css";
 
 function Block() {
-	const mousePosition = useMousePosition();
+	useMousePosition();
 
 	return (
 		<div className="container">
-			<div className="eye">
-				<div className="tracker"></div>
-			</div>
-			<div className="eye">
-				{/* <div className="tracker_eye">{JSON.stringify(mousePosition)}</div> */}
-				<div className="tracker"></div>
+			<div className="face">
+				<div className="eyebrows">
+					<div className="brow"></div>
+					<div className="brow"></div>
+				</div>
+				<div className="eyes">
+					<div className="eye">
+						<div className="tracker"></div>
+					</div>
+					<div className="eye">
+						{/* <div className="tracker_eye">{JSON.stringify(mousePosition)}</div> */}
+						<div className="tracker"></div>
+					</div>
+				</div>
+				<div className="mouth"></div>
 			</div>
 		</div>
 	);
