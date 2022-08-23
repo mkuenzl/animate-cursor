@@ -1,10 +1,10 @@
-import Block from './Block';
+import Face from './components/Face';
 
 function App() {
   
   return (
     <>
-      <Block /> 
+      <Face /> 
     </>
   );
 }

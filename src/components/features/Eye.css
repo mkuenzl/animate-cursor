@@ -1,0 +1,30 @@
+
+.eyebrow {
+    display: flex;
+    width:200px; height:50px;  
+    border:solid 5px #000;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 50%/45px 45px 0 0;
+    transform: translate(calc(0% + 25px * var(--x)), calc(-50% + 50px * var(--y)));
+}
+
+.eye {
+    width: 200px;
+    height: 200px;
+    transform: translate(0%, 0%);
+    border: 3px solid #333;
+    background-color: azure;
+    border-radius: 40%;
+    transform: translate(calc(-10%  + 50px * var(--x)), calc(-10% + 50px * var(--y)));
+}
+
+.tracker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 30px;
+    top: 30px;
+    border-radius: 40%;
+    background-color: black;
+    transform: translate(calc(-50%  + 130px * var(--x)), calc(-50% + 130px * var(--y)));
+}

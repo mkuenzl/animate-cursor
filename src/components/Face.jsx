@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from "react";
-import "./Block.css";
+import "./Face.css";
+import Eye from "./features/Eye";
+import Eyebrow from "./features/Eyebrow";
+import Mouth from "./features/Mouth";
 
-function Block() {
-	useMousePosition();
+function Face() {
+	const mousePosition = useMousePosition();
 
 	return (
 		<div className="container">
 			<div className="face">
+				{JSON.stringify(mousePosition)}
 				<div className="eyebrows">
-					<div className="brow"></div>
-					<div className="brow"></div>
+					<Eyebrow />
+					<Eyebrow />
 				</div>
 				<div className="eyes">
-					<div className="eye">
-						<div className="tracker"></div>
-					</div>
-					<div className="eye">
-						{/* <div className="tracker_eye">{JSON.stringify(mousePosition)}</div> */}
-						<div className="tracker"></div>
-					</div>
+					<Eye />
+					<Eye />
 				</div>
-				<div className="mouth"></div>
+				<Mouth />
 			</div>
 		</div>
 	);
 }
 
-export default Block;
+export default Face;
 
 function useMousePosition() {
 	const [mousePosition, setMousePosition] = useState({ x: null, y: null });
