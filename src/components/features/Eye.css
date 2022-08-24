@@ -1,30 +1,36 @@
+ /*
+ f(0.5) = 0, f(0.25) = -25, f(0.75) = 25
 
+ f(0.5) = 0% + 40px * (0.5 - 0.5)
+        = 0% + 40px * 0 
+        = 0
+ */
+ 
 .eyebrow {
     display: flex;
-    width:200px; height:50px;  
+    width:175px; height: 25px;  
     border:solid 5px #000;
     border-color: #000 transparent transparent transparent;
     border-radius: 50%/45px 45px 0 0;
-    transform: translate(calc(0% + 25px * var(--x)), calc(-50% + 50px * var(--y)));
+    transform: translate(calc(0% + 20px * (var(--x) - 0.5)), calc(-0% + 20px * (var(--y) - 0.5)));
 }
 
 .eye {
     width: 200px;
     height: 200px;
-    transform: translate(0%, 0%);
     border: 3px solid #333;
     background-color: azure;
     border-radius: 40%;
-    transform: translate(calc(-10%  + 50px * var(--x)), calc(-10% + 50px * var(--y)));
+    transform: translate(calc(0% + 40px * (var(--x) - 0.5)), calc(-0% + 40px * (var(--y) - 0.5)));
 }
 
 .tracker {
     position: absolute;
     width: 20px;
     height: 20px;
-    left: 30px;
-    top: 30px;
+    left: 90px;
+    top: 90px;
     border-radius: 40%;
     background-color: black;
-    transform: translate(calc(-50%  + 130px * var(--x)), calc(-50% + 130px * var(--y)));
+    transform: translate(calc(0%  + 80px * (var(--x) - 0.5)), calc(-0% + 80px * (var(--y) - 0.5)));
 }

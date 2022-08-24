@@ -1,7 +1,6 @@
-
 .mouth{
     display: flex;
-    width:600px; height:100px;  
+    width:500px; height:100px;  
     border:solid 5px #000;
     border-color: transparent transparent #000 transparent;
     border-radius: 0 0 240px 40%/75px;

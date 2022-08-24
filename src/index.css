@@ -22,10 +22,31 @@ html {
 
 
 /* Added font family and background picture */
+/* removes standard styles across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
 body {
   /*font-family: 'Anek Odia', sans-serif;*/
   /*font-family: 'Space Mono', monospace;*/
   font-family: 'Poppins', sans-serif;
   background: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  max-width: 100%;
 }
   
+:root {
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+}
