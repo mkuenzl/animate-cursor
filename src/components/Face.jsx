@@ -19,7 +19,9 @@ function Face() {
 					<Eye />
 					<Eye />
 				</div>
-				<Mouth />
+				<div className="mouths">
+					<Mouth />
+				</div>
 			</div>
 		</div>
 	);

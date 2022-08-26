@@ -8,29 +8,48 @@
  
 .eyebrow {
     display: flex;
-    width:175px; height: 25px;  
-    border:solid 5px #000;
+    width:20vw; height: 2.5vw;  
+    border:solid 0.5vw #000;
     border-color: #000 transparent transparent transparent;
-    border-radius: 50%/45px 45px 0 0;
-    transform: translate(calc(0% + 20px * (var(--x) - 0.5)), calc(-0% + 20px * (var(--y) - 0.5)));
+    border-radius: 50%/4.5vw 4.5vw 0 0;
+    transform: translate(calc(0% + 4vw * (var(--x) - 0.5)), calc(-0% + 2vw * (var(--y) - 0.5)));
 }
 
 .eye {
-    width: 200px;
-    height: 200px;
-    border: 3px solid #333;
+    display: flex;
+    /* background-image: url('../../assets/images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+    width: 20vw;
+    height: 20vw;
+    border: 0.25vw solid #333;
+    align-items: center;
+    justify-content: center;
     background-color: azure;
-    border-radius: 40%;
-    transform: translate(calc(0% + 40px * (var(--x) - 0.5)), calc(-0% + 40px * (var(--y) - 0.5)));
+    border-radius: 20%;
+    transform: translate(calc(0% + 6vw * (var(--x) - 0.5)), calc(-0% + 4vw * (var(--y) - 0.5)));
 }
 
 .tracker {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 90px;
-    top: 90px;
+    width: 2vw;
+    height: 2vw;
     border-radius: 40%;
     background-color: black;
-    transform: translate(calc(0%  + 80px * (var(--x) - 0.5)), calc(-0% + 80px * (var(--y) - 0.5)));
+    transform: translate(calc(0%  + 15vw * (var(--x) - 0.5)), calc(-0% + 10vw * (var(--y) - 0.5)));
 }
+
+@media screen and (max-width: 480px) {
+    .eye {
+      /* background-color: lightgreen; */
+      transition: transform 400ms ease;
+    }
+
+    .eyebrow {
+        transition: transform 400ms ease;
+    }
+
+    .tracker {
+        transition: transform 300ms ease;
+    }
+  }
