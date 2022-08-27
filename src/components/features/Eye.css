@@ -8,11 +8,11 @@
  
 .eyebrow {
     display: flex;
-    width:20vw; height: 2.5vw;  
+    width:40%; height: 100%;  
     border:solid 0.5vw #000;
     border-color: #000 transparent transparent transparent;
     border-radius: 50%/4.5vw 4.5vw 0 0;
-    transform: translate(calc(0% + 4vw * (var(--x) - 0.5)), calc(-0% + 2vw * (var(--y) - 0.5)));
+    transform: translate(calc(0% + var(--width) * 0.075 * (var(--x) - 0.5)), calc(-0% + var(--width) * 0.05 * (var(--y) - 0.5)));
 }
 
 .eye {
@@ -21,22 +21,28 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; */
-    width: 20vw;
-    height: 20vw;
+    width: 40%;
+    height: 80%;
     border: 0.25vw solid #333;
     align-items: center;
     justify-content: center;
     background-color: azure;
     border-radius: 20%;
-    transform: translate(calc(0% + 6vw * (var(--x) - 0.5)), calc(-0% + 4vw * (var(--y) - 0.5)));
+    transform: translate(calc(0% + var(--width) * 0.10 * (var(--x) - 0.5)), calc(-0% + var(--width) * 0.08 * (var(--y) - 0.5)));
 }
 
+/* position of container --positionX --positionY 
+var(--x) is mouse position
+var(--x) - 0,5 sets x at the middle of the screen to 0
+*/
+
+
 .tracker {
-    width: 2vw;
-    height: 2vw;
+    width: 15%;
+    height: 15%;
     border-radius: 40%;
     background-color: black;
-    transform: translate(calc(0%  + 15vw * (var(--x) - 0.5)), calc(-0% + 10vw * (var(--y) - 0.5)));
+    transform: translate(calc(0%  + var(--width) * 0.25 * calc(var(--x) - var(--positionX))), calc(-0% + var(--width) * 0.20 * calc(var(--x) - var(--positionY))));
 }
 
 @media screen and (max-width: 480px) {
