@@ -1,12 +1,11 @@
-import Face from './components/Face';
+import Face from "./components/Face";
 
 function App() {
-  
-  return (
-    <>
-      <Face /> 
-    </>
-  );
+	return (
+		<>
+			<Face />
+		</>
+	);
 }
 
 export default App;
