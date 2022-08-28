@@ -1,34 +1,35 @@
- /*
+/*
  f(0.5) = 0, f(0.25) = -25, f(0.75) = 25
 
  f(0.5) = 0% + 40px * (0.5 - 0.5)
         = 0% + 40px * 0 
         = 0
  */
- 
+
 .eyebrow {
-    display: flex;
-    width:40%; height: 100%;  
-    border:solid 0.5vw #000;
-    border-color: #000 transparent transparent transparent;
-    border-radius: 50%/4.5vw 4.5vw 0 0;
-    transform: translate(calc(0% + var(--width) * 0.075 * (var(--x) - 0.5)), calc(-0% + var(--width) * 0.05 * (var(--y) - 0.5)));
+	display: flex;
+	width: 40%;
+	height: 100%;
+	border: solid 0.5vw #000;
+	border-color: #000 transparent transparent transparent;
+	border-radius: 50%/4.5vw 4.5vw 0 0;
+	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y))));
 }
 
 .eye {
-    display: flex;
-    /* background-image: url('../../assets/images/logo.svg');
+	display: flex;
+	/* background-image: url('../../assets/images/logo.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; */
-    width: 40%;
-    height: 80%;
-    border: 0.25vw solid #333;
-    align-items: center;
-    justify-content: center;
-    background-color: azure;
-    border-radius: 20%;
-    transform: translate(calc(0% + var(--width) * 0.10 * (var(--x) - 0.5)), calc(-0% + var(--width) * 0.08 * (var(--y) - 0.5)));
+	width: 40%;
+	height: 80%;
+	border: 0.25vw solid #333;
+	align-items: center;
+	justify-content: center;
+	background-color: azure;
+	border-radius: 20%;
+	transform: translate(calc(var(--width) * 0.15 * (var(--x))), calc(var(--width) * 0.2 * (var(--y))));
 }
 
 /* position of container --positionX --positionY 
@@ -36,26 +37,32 @@ var(--x) is mouse position
 var(--x) - 0,5 sets x at the middle of the screen to 0
 */
 
+/* transform - widthOfFaceContainer * widthOfSubContainer% * widthOfSubSubContainer% 
+	- 2 * (widthOfFaceContainer * widthOfSubContainer% * widthOfSubSubContainer% * widthOfTracker%) */
 
+/* 16vh - */
 .tracker {
-    width: 15%;
-    height: 15%;
-    border-radius: 40%;
-    background-color: black;
-    transform: translate(calc(0%  + var(--width) * 0.25 * calc(var(--x) - var(--positionX))), calc(-0% + var(--width) * 0.20 * calc(var(--x) - var(--positionY))));
+	width: 15%;
+	height: 15%;
+	border-radius: 40%;
+	background-color: black;
+	transform: translate(
+		calc(calc(calc(var(--width) * 1 * 0.4) - calc(var(--width) * 1 * 0.4 * 0.15) * 3) * var(--x)),
+		calc(calc(calc(var(--width) * 0.5 * 0.8) - calc(var(--width) * 0.5 * 0.8 * 0.15 * 2)) * var(--y))
+	);
 }
 
 @media screen and (max-width: 480px) {
-    .eye {
-      /* background-color: lightgreen; */
-      transition: transform 400ms ease;
-    }
+	.eye {
+		/* background-color: lightgreen; */
+		transition: transform 400ms ease;
+	}
 
-    .eyebrow {
-        transition: transform 400ms ease;
-    }
+	.eyebrow {
+		transition: transform 400ms ease;
+	}
 
-    .tracker {
-        transition: transform 300ms ease;
-    }
-  }
+	.tracker {
+		transition: transform 300ms ease;
+	}
+}
