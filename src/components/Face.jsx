@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Face.css";
 import Eye from "./features/Eye";
 import Eyebrow from "./features/Eyebrow";
@@ -48,28 +48,33 @@ function setPosition(el) {
 	const containerCenterY = (el.getBoundingClientRect().width / 2 / window.innerHeight + Number(responsiveY)).toFixed(2);
 	console.log(containerCenterY);
 
-	// const root = document.getElementById("root");
+	const root = document.getElementById("root");
 
-	// root.style.setProperty("--positionX", containerCenterX);
-	// root.style.setProperty("--positionY", containerCenterY);
+	root.style.setProperty("--positionX", containerCenterX);
+	root.style.setProperty("--positionY", containerCenterY);
 
 	containerCenterPositionX = containerCenterX;
 	containerCenterPositionY = containerCenterY;
 }
 
 function useMousePosition() {
-	//const [mousePosition, setMousePosition] = useState({ x: null, y: null });
+	const [mousePosition, setMousePosition] = useState({ x: null, y: null });
 	useEffect(() => {
 		const updateMousePosition = (ev) => {
+			// add logarithmic function
+
 			const responsiveX = (ev.clientX / window.innerWidth - containerCenterPositionX).toFixed(2);
 			const responsiveY = (ev.clientY / window.innerHeight - containerCenterPositionY).toFixed(2);
 
+			//const logX = ((1.5 ^ responsiveX) - 1) / (1.5 - 1);
+
 			const root = document.getElementById("root");
 
+			console.log(root.style.getPropertyValue("--positionX"));
 			root.style.setProperty("--x", responsiveX);
 			root.style.setProperty("--y", responsiveY);
 
-			//setMousePosition({ x: responsiveX, y: responsiveY });
+			setMousePosition({ x: responsiveX, y: responsiveY });
 		};
 		window.addEventListener("mousemove", updateMousePosition);
 
@@ -78,5 +83,5 @@ function useMousePosition() {
 		};
 	}, []);
 
-	//return mousePosition;
+	return mousePosition;
 }

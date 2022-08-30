@@ -39,7 +39,6 @@ var(--x) - 0,5 sets x at the middle of the screen to 0
 
 /* transform - widthOfFaceContainer * widthOfSubContainer% * widthOfSubSubContainer% 
 	- 2 * (widthOfFaceContainer * widthOfSubContainer% * widthOfSubSubContainer% * widthOfTracker%) */
-
 /* 16vh - */
 .tracker {
 	width: 15%;
