@@ -18,10 +18,6 @@
 
 .eye {
 	display: flex;
-	/* background-image: url('../../assets/images/logo.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; */
 	width: 40%;
 	height: 80%;
 	border: 0.25vw solid #333;

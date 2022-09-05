@@ -8,12 +8,11 @@ let containerCenterPositionX = 0;
 let containerCenterPositionY = 0;
 
 function Face() {
-	const mousePosition = useMousePosition();
+	useMousePosition();
 
 	return (
 		<div className="container">
 			<div className="face" ref={setPosition}>
-				{JSON.stringify(mousePosition)}
 				<div className="eyebrows">
 					<Eyebrow />
 					<Eyebrow />

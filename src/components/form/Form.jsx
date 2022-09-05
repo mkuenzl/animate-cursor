@@ -1,12 +1,26 @@
 import React, { Component } from "react";
-import "../../index.css";
+import "./Form.css";
+import ButtonGroup from "./ButtonGroup";
 
 export class Form extends Component {
-	render() {
-		const update = (value, cssVariable) => {
-			const root = document.getElementById("root");
+	constructor(props) {
+		super(props);
+		this.state = { unitTypes: ["vw", "px"], unit: "vw", width: "40" };
+	}
 
-			root.style.setProperty(cssVariable, value);
+	render() {
+		//let activeType = unitTypes[0];
+
+		const update = (value, measure, cssVariable) => {
+			const root = document.getElementById("root");
+			this.setState({ width: value });
+			root.style.setProperty(cssVariable, value + measure);
+		};
+
+		const setActiveType = (event) => {
+			this.setState({ measurement: event.target.name });
+			update(this.state.width, event.target.name, "--width");
+			// console.log(event.target.name);
 		};
 
 		return (
@@ -18,14 +32,14 @@ export class Form extends Component {
 							name="width"
 							minLength="3"
 							maxLength="20"
-							placeholder="width"
-							required
-							onChange={(e) => update(e.target.value, "--width")}
+							placeholder="40"
+							onChange={(e) => update(e.target.value, this.state.unit, "--width")}
 						/>
 					</div>
 					{/* <TextInput id="email" customRules={customRules} validate="weirdRule" />
                             <TextInput id="userName" validate="numeric" /> */}
 				</form>
+				<ButtonGroup buttons={this.state.unitTypes} handleClickFunction={setActiveType} />
 			</div>
 		);
 	}
