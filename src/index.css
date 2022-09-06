@@ -59,3 +59,10 @@ body {
 	min-height: 100vh;
 	flex: 1;
 }
+
+@media screen and (max-width: 780px) {
+	.container_face {
+		/* background-color: lightgreen; */
+		min-width: 100vw;
+	}
+}
