@@ -10,8 +10,7 @@
 	display: flex;
 	width: 40%;
 	height: 100%;
-	border: solid #000;
-	border-width: small;
+	border: 0.125vw solid #000;
 	border-color: #000 transparent transparent transparent;
 	border-radius: 50%/4.5vw 4.5vw 0 0;
 	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y))));
@@ -21,8 +20,7 @@
 	display: flex;
 	width: 40%;
 	height: 80%;
-	border: solid #000;
-	border-width: small;
+	border: 0.1vw solid #000;
 	align-items: center;
 	justify-content: center;
 	background-color: azure;
@@ -34,8 +32,7 @@
 	display: flex;
 	width: 40%;
 	height: 80%;
-	border: solid #000;
-	border-width: small;
+	border: 0.1vw solid #000;
 	align-items: center;
 	justify-content: center;
 	background-color: azure;

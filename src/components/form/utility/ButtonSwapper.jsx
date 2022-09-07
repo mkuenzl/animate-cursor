@@ -7,13 +7,13 @@ const ButtonSwapper = ({ name }) => {
 	const handleClick = (event) => {
 		if (clicked) {
 			setClicked(false);
-			document.getElementById("leftEye").className = "eye-style-round";
-			document.getElementById("rightEye").className = "eye-style-round";
+			document.getElementById("leftEye").className = "eye";
+			document.getElementById("rightEye").className = "eye";
 			console.log("eye style: round");
 		} else {
 			setClicked(true);
-			document.getElementById("leftEye").className = "eye";
-			document.getElementById("rightEye").className = "eye";
+			document.getElementById("leftEye").className = "eye-style-round";
+			document.getElementById("rightEye").className = "eye-style-round";
 			console.log("eye style: default");
 		}
 	};
