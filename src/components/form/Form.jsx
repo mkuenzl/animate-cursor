@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Form.css";
-import ButtonGroup from "./ButtonGroup";
+import ButtonGroup from "./utility/ButtonGroup";
+import ButtonSwapper from "./utility/ButtonSwapper";
 
 export class Form extends Component {
 	constructor(props) {
@@ -25,6 +26,7 @@ export class Form extends Component {
 
 		return (
 			<div className="input_form">
+				<ButtonSwapper name="EyeStyle" />
 				<form action="">
 					<div className="container_form-label">
 						<input
