@@ -43,6 +43,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 2vw;
+	min-height: 100vh;
+	min-width: 100vw;
 }
 
 .container_form {
@@ -56,13 +58,12 @@ body {
 	justify-content: center;
 	align-items: center;
 	min-width: 70vw;
-	min-height: 100vh;
 	flex: 1;
 }
 
 @media screen and (max-width: 780px) {
 	.container_face {
 		/* background-color: lightgreen; */
-		min-width: 100vw;
+		min-width: 100%;
 	}
 }

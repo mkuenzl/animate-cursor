@@ -10,7 +10,8 @@
 	display: flex;
 	width: 40%;
 	height: 100%;
-	border: solid 0.5vw #000;
+	border: solid #000;
+	border-width: small;
 	border-color: #000 transparent transparent transparent;
 	border-radius: 50%/4.5vw 4.5vw 0 0;
 	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y))));
@@ -20,7 +21,8 @@
 	display: flex;
 	width: 40%;
 	height: 80%;
-	border: 0.25vw solid #333;
+	border: solid #000;
+	border-width: small;
 	align-items: center;
 	justify-content: center;
 	background-color: azure;
@@ -28,6 +30,18 @@
 	transform: translate(calc(var(--width) * 0.15 * (var(--x))), calc(var(--width) * 0.2 * (var(--y))));
 }
 
+.eye-style-round {
+	display: flex;
+	width: 40%;
+	height: 80%;
+	border: solid #000;
+	border-width: small;
+	align-items: center;
+	justify-content: center;
+	background-color: azure;
+	border-radius: 50%;
+	transform: translate(calc(var(--width) * 0.15 * (var(--x))), calc(var(--width) * 0.2 * (var(--y))));
+}
 /* position of container --positionX --positionY 
 var(--x) is mouse position
 var(--x) - 0,5 sets x at the middle of the screen to 0

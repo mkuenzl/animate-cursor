@@ -1,4 +1,4 @@
-import Face from "./components/Face";
+import Face from "./components/face/Face";
 import Form from "./components/form/Form";
 import "./index.css";
 

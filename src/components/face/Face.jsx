@@ -18,8 +18,8 @@ function Face() {
 					<Eyebrow />
 				</div>
 				<div className="eyes">
-					<Eye />
-					<Eye />
+					<Eye id="leftEye" />
+					<Eye id="rightEye" />
 				</div>
 				<div className="mouths">
 					<Mouth />
@@ -39,13 +39,13 @@ function setPosition(el) {
 	const responsiveX = (el.getBoundingClientRect().x / window.innerWidth).toFixed(2);
 	const responsiveY = (el.getBoundingClientRect().y / window.innerHeight).toFixed(2);
 
-	console.log(window.innerHeight);
+	console.log("height of window: " + window.innerHeight);
 
 	const containerCenterX = (el.getBoundingClientRect().width / 2 / window.innerWidth + Number(responsiveX)).toFixed(2);
-	console.log(containerCenterX);
+	console.log("center of face: x = " + containerCenterX);
 
 	const containerCenterY = (el.getBoundingClientRect().width / 2 / window.innerHeight + Number(responsiveY)).toFixed(2);
-	console.log(containerCenterY);
+	console.log("center of face: y = " + containerCenterY);
 
 	const root = document.getElementById("root");
 
@@ -69,7 +69,9 @@ function useMousePosition() {
 
 			const root = document.getElementById("root");
 
-			console.log(root.style.getPropertyValue("--positionX"));
+			console.log("relative mouse position: x = " + responsiveX);
+			console.log("relative mouse position: y = " + responsiveY);
+
 			root.style.setProperty("--x", responsiveX);
 			root.style.setProperty("--y", responsiveY);
 

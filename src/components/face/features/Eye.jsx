@@ -1,8 +1,9 @@
 import React from "react";
+import "./Eye.css";
 
-const Eye = () => {
+const Eye = ({ id }) => {
 	return (
-		<div className="eye">
+		<div className="eye" id={id}>
 			<div className="tracker"></div>
 		</div>
 	);

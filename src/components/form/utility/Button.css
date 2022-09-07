@@ -1,0 +1,31 @@
+.buttonGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2em;
+}
+
+.customButton {
+	width: 30px;
+	height: 100%;
+	letter-spacing: 0.5px;
+	background-color: #ffffff;
+	font-size: 12px;
+	border: 0.1vw solid black;
+	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.swapButton {
+	background-color: #ffffff;
+	padding: 10px;
+	margin: 10px 0;
+	border: 0.1vw solid black;
+	margin: auto;
+	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+	border-radius: 10px;
+	text-align: center;
+}
+.active {
+	background-color: rgb(213, 212, 212);
+}
