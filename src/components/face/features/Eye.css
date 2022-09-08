@@ -6,7 +6,7 @@
         = 0
  */
 
-.eyebrow {
+.brow-happy {
 	display: flex;
 	width: 40%;
 	height: 100%;
@@ -14,9 +14,34 @@
 	border-color: #000 transparent transparent transparent;
 	border-radius: 50%/4.5vw 4.5vw 0 0;
 	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y))));
+	transition: border-radius 0.5s ease-in-out;
 }
 
-.eye {
+.brow-left-surprised {
+	display: flex;
+	width: 40%;
+	height: 100%;
+	border: 0.125vw solid #000;
+	border-color: #000 transparent transparent transparent;
+	border-top-left-radius: 100%;
+	border-top-right-radius: 100%;
+	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y)) - 75%));
+	transition: border-radius 0.5s ease-in-out;
+}
+
+.brow-right-surprised {
+	display: flex;
+	width: 40%;
+	height: 100%;
+	border: 0.125vw solid #000;
+	border-color: #000 transparent transparent transparent;
+	border-top-left-radius: 100%;
+	border-top-right-radius: 100%;
+	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y)) - 75%));
+	transition: border-radius 0.5s ease-in-out;
+}
+
+.eye-happy {
 	display: flex;
 	width: 40%;
 	height: 80%;
@@ -26,9 +51,10 @@
 	background-color: azure;
 	border-radius: 20%;
 	transform: translate(calc(var(--width) * 0.15 * (var(--x))), calc(var(--width) * 0.2 * (var(--y))));
+	transition: border-radius 0.5s ease-in-out;
 }
 
-.eye-style-round {
+.eye-surprised {
 	display: flex;
 	width: 40%;
 	height: 80%;
@@ -38,6 +64,7 @@
 	background-color: azure;
 	border-radius: 50%;
 	transform: translate(calc(var(--width) * 0.15 * (var(--x))), calc(var(--width) * 0.2 * (var(--y))));
+	transition: border-radius 0.5s ease-in-out;
 }
 /* position of container --positionX --positionY 
 var(--x) is mouse position

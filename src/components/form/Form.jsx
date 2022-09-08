@@ -26,7 +26,7 @@ export class Form extends Component {
 
 		return (
 			<div className="input_form">
-				<ButtonSwapper name="EyeStyle" />
+				<ButtonSwapper name="Mood" />
 				<form action="">
 					<div className="container_form-label">
 						<input

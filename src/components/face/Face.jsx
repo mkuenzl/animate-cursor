@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Face.css";
 import Eye from "./features/Eye";
-import Eyebrow from "./features/Eyebrow";
+import Brow from "./features/Brow";
 import Mouth from "./features/Mouth";
 
 let containerCenterPositionX = 0;
@@ -14,8 +14,8 @@ function Face() {
 		<div className="container">
 			<div className="face" ref={setPosition}>
 				<div className="eyebrows">
-					<Eyebrow />
-					<Eyebrow />
+					<Brow id="leftBrow" mood="brow-left-surprised" />
+					<Brow id="rightBrow" mood="brow-right-surprised" />
 				</div>
 				<div className="eyes">
 					<Eye id="leftEye" />

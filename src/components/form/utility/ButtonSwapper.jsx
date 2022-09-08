@@ -7,13 +7,20 @@ const ButtonSwapper = ({ name }) => {
 	const handleClick = (event) => {
 		if (clicked) {
 			setClicked(false);
-			document.getElementById("leftEye").className = "eye";
-			document.getElementById("rightEye").className = "eye";
+			document.getElementById("leftEye").className = "eye-happy";
+			document.getElementById("rightEye").className = "eye-happy";
+			document.getElementById("mouth").className = "happy";
+			document.getElementById("leftBrow").className = "brow-happy";
+			document.getElementById("rightBrow").className = "brow-happy";
 			console.log("eye style: round");
 		} else {
 			setClicked(true);
-			document.getElementById("leftEye").className = "eye-style-round";
-			document.getElementById("rightEye").className = "eye-style-round";
+			document.getElementById("leftEye").className = "eye-surprised";
+			document.getElementById("rightEye").className = "eye-surprised";
+			document.getElementById("mouth").className = "surprised";
+			document.getElementById("leftBrow").className = "brow-left-surprised";
+			document.getElementById("rightBrow").className = "brow-right-surprised";
+
 			console.log("eye style: default");
 		}
 	};
