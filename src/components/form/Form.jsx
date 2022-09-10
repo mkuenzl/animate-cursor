@@ -19,7 +19,7 @@ export class Form extends Component {
 		};
 
 		const setActiveType = (event) => {
-			this.setState({ measurement: event.target.name });
+			this.setState({ unit: event.target.name });
 			update(this.state.width, event.target.name, "--width");
 			// console.log(event.target.name);
 		};
