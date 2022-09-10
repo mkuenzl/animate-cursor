@@ -1,4 +1,4 @@
-import Face from "./components/face/Face";
+import Head from "./components/face/Head";
 import Form from "./components/form/Form";
 import "./index.css";
 
@@ -10,7 +10,7 @@ function App() {
 					<Form />
 				</div>
 				<div className="container_face">
-					<Face />
+					<Head />
 				</div>
 			</div>
 		</>

@@ -1,0 +1,63 @@
+.container__head {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: var(--width);
+	width: var(--width);
+	/*hair*/
+	background: #baab93;
+	border-radius: 20%;
+	border: 0.075vw solid #000;
+	transform: translate(calc(var(--width) * 0.05 * (var(--x))), calc(var(--width) * 0.1 * (var(--y))));
+}
+
+.head {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 0.1vw solid #000;
+	background-color: #f3dfc1;
+	border-radius: 20%;
+	transform: translate(calc(var(--width) * 0.125 * (var(--x))), calc(var(--width) * 0.15 * (var(--y))));
+}
+
+.eyebrows {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 5%;
+	gap: 2%;
+	justify-content: center;
+}
+
+.eyes {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 2%;
+}
+
+.mouths {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media screen and (max-width: 480px) {
+	.container__head {
+		/* background-color: lightgreen; */
+		transition: transform 350ms ease;
+	}
+	.head {
+		/* background-color: lightgreen; */
+		transition: transform 350ms ease;
+	}
+}

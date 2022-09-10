@@ -85,17 +85,64 @@ var(--x) - 0,5 sets x at the middle of the screen to 0
 	);
 }
 
+.mouth-area {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.mouth-area .happy {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	border: 0.15vw solid #000;
+	border-color: transparent transparent #000 transparent;
+	border-radius: 0 0 17.5vw 40%/7.5vw;
+	transform: translate(calc(var(--width) * 0.05 * (var(--x))), calc(var(--width) * 0.1 * (var(--y))));
+	transition: border-radius 0.5s ease-in-out;
+}
+
+.mouth-area .surprised {
+	display: flex;
+	width: 20%;
+	height: 75%;
+	opacity: 100%;
+	background-color: #ffe6ee6d;
+	border: 0.15vw solid #000;
+	border-color: #000;
+	border-radius: 100%;
+	transform: translate(calc(var(--width) * 0.25 * (var(--x))), calc(var(--width) * 0.1 * (var(--y))));
+	transition: border-radius 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
 @media screen and (max-width: 480px) {
-	.eye {
+	.eye-happy {
 		/* background-color: lightgreen; */
-		transition: transform 400ms ease;
+		transition: transform 350ms ease;
 	}
 
-	.eyebrow {
-		transition: transform 400ms ease;
+	.eye-surprised {
+		transition: transform 350ms ease;
+	}
+	.eyebrow-happy {
+		transition: transform 350ms ease;
+	}
+	.eyebrow-left-surprised {
+		transition: transform 350ms ease;
+	}
+	.eyebrow-right-surprised {
+		transition: transform 350ms ease;
 	}
 
 	.tracker {
 		transition: transform 300ms ease;
+	}
+	.mouth-area .happy {
+		transition: transform 350ms ease;
+	}
+	.mouth-area .surprised {
+		transition: transform 350ms ease;
 	}
 }

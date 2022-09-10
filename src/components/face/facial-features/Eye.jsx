@@ -1,5 +1,5 @@
 import React from "react";
-import "./Eye.css";
+import "./Facial.css";
 
 const Eye = ({ id }) => {
 	return (

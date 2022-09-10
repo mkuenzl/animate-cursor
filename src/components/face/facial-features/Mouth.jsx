@@ -1,10 +1,10 @@
 import React from "react";
-import "./Mouth.css";
+import "./Facial.css";
 
 const Mouth = () => {
 	return (
 		<div className="mouth-area">
-			<div className="surprised" id="mouth"></div>
+			<div className="happy" id="mouth"></div>
 		</div>
 	);
 };

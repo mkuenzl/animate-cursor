@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import "./Face.css";
-import Eye from "./features/Eye";
-import Brow from "./features/Brow";
-import Mouth from "./features/Mouth";
+import "./Head.css";
+import Eye from "./facial-features/Eye";
+import Eyebrow from "./facial-features/Eyebrow";
+import Mouth from "./facial-features/Mouth";
 
 let containerCenterPositionX = 0;
 let containerCenterPositionY = 0;
 
-function Face() {
+function Head() {
 	useMousePosition();
 
 	return (
-		<div className="container">
-			<div className="face" ref={setPosition}>
+		<div className="container__head">
+			<div className="head" ref={setPosition}>
 				<div className="eyebrows">
-					<Brow id="leftBrow" mood="brow-left-surprised" />
-					<Brow id="rightBrow" mood="brow-right-surprised" />
+					<Eyebrow id="leftBrow" mood="brow-happy" />
+					<Eyebrow id="rightBrow" mood="brow-happy" />
 				</div>
 				<div className="eyes">
 					<Eye id="leftEye" />
@@ -29,7 +29,7 @@ function Face() {
 	);
 }
 
-export default Face;
+export default Head;
 
 // TODO implement so that function is only called once
 function setPosition(el) {

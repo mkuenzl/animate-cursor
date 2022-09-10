@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "../../face/features/Eye.css";
+import "../../face/facial-features/Facial.css";
 
 const ButtonSwapper = ({ name }) => {
 	const [clicked, setClicked] = useState(false);

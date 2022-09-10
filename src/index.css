@@ -11,15 +11,11 @@
 
 /* Defines all css variables across the project - can be used anywhere with var() */
 :root {
-	--width: 50vw;
-	--justify: center;
+	--width: 40vw;
 	--positionX: 5px;
 	--positionY: 5px;
 	--x: 5px;
 	--y: 5px;
-	--container-width-lg: 75%;
-	--container-width-md: 86%;
-	--container-width-sm: 90%;
 }
 
 /* Gives the page a smooth scrolling look */
@@ -28,11 +24,11 @@ html {
 }
 
 body {
-	/*font-family: 'Anek Odia', sans-serif;*/
-	/*font-family: 'Space Mono', monospace;*/
-	font-family: "Poppins", sans-serif;
-	background: beige;
+	font-family: "Space Mono", monospace;
+	/* background: #393d3f; */
+	background-image: radial-gradient(circle farthest-side, #565c61, #393d3f);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
@@ -63,7 +59,6 @@ body {
 
 @media screen and (max-width: 780px) {
 	.container_face {
-		/* background-color: lightgreen; */
 		min-width: 100%;
 	}
 }
