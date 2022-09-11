@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import "../../face/facial-features/Facial.css";
+import "./Button.css";
 
 const ButtonSwapper = ({ name }) => {
 	const [clicked, setClicked] = useState(false);
