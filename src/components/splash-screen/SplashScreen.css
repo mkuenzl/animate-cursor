@@ -1,0 +1,173 @@
+.wrap {
+	/* margin-top: 200px; */
+	--cubeSideLength: 20px;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+}
+
+.cube {
+	margin: auto;
+	position: relative;
+	height: var(--cubeSideLength);
+	width: var(--cubeSideLength);
+	transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+}
+.cube div {
+	position: absolute;
+	box-sizing: border-box;
+	font-size: 0;
+	padding: 10px;
+	height: 100%;
+	width: 100%;
+	opacity: 0.9;
+	border: solid 1px #eeeeee;
+	color: #ffffff;
+}
+
+.front {
+	background-color: #f8cc0f;
+}
+.back {
+	background-color: #4db849;
+}
+.right {
+	background-color: #e8483f;
+}
+.left {
+	background-color: #ffa6a6;
+}
+.top {
+	background-color: #000;
+}
+.bottom {
+	background-color: #53bdeb;
+}
+
+/* Cube Building */
+
+.front {
+	transform: translateZ(calc(var(--cubeSideLength) * 0.5));
+	-ms-transform: translateZ(calc(var(--cubeSideLength) * 0.5));
+	-webkit-transform: translateZ(calc(var(--cubeSideLength) * 0.5));
+	background-color: #f8cc0f;
+}
+.back {
+	transform: translateZ(calc(var(--cubeSideLength) * -0.5)) rotateY(180deg);
+	-webkit-transform: translateZ(calc(var(--cubeSideLength) * -0.5)) rotateY(180deg);
+	-ms-transform: translateZ(calc(var(--cubeSideLength) * -0.5)) rotateY(180deg);
+	background-color: #4db849;
+}
+.right {
+	transform: rotateY(-270deg) translateX(calc(var(--cubeSideLength) * 0.5));
+	-ms-transform: rotateY(-270deg) translateX(calc(var(--cubeSideLength) * 0.5));
+	-webkit-transform: rotateY(-270deg) translateX(calc(var(--cubeSideLength) * 0.5));
+	transform-origin: top right;
+	-ms-transform-origin: top right;
+	-webkit-transform-origin: top right;
+	background-color: #e8483f;
+}
+.left {
+	transform: rotateY(270deg) translateX(calc(var(--cubeSideLength) * -0.5));
+	-webkit-transform: rotateY(270deg) translateX(calc(var(--cubeSideLength) * -0.5));
+	-ms-transform: rotateY(270deg) translateX(calc(var(--cubeSideLength) * -0.5));
+	transform-origin: center left;
+	-ms-transform-origin: center left;
+	-webkit-transform-origin: center left;
+	background-color: #ffa6a6;
+}
+.top {
+	transform: rotateX(-270deg) translateY(calc(var(--cubeSideLength) * -0.5));
+	-webkit-transform: rotateX(-270deg) translateY(calc(var(--cubeSideLength) * -0.5));
+	-ms-transform: rotateX(-270deg) translateY(calc(var(--cubeSideLength) * -0.5));
+	transform-origin: top center;
+	-ms-transform-origin: top center;
+	-webkit-transform-origin: top center;
+	background-color: #000;
+}
+.bottom {
+	transform: rotateX(270deg) translateY(calc(var(--cubeSideLength) * 0.5));
+	-webkit-transform: rotateX(270deg) translateY(calc(var(--cubeSideLength) * 0.5));
+	-ms-transform: rotateX(270deg) translateY(calc(var(--cubeSideLength) * 0.5));
+	transform-origin: bottom center;
+	-ms-transform-origin: bottom center;
+	-webkit-transform-origin: bottom center;
+	background-color: #53bdeb;
+}
+
+/* Cube Animation */
+
+@keyframes rotate {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		-ms-transform: rotateX(0deg) rotateY(0deg);
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+	}
+	50% {
+		transform: rotateX(0deg) rotateY(360deg);
+		-ms-transform: rotateX(0deg) rotateY(360deg);
+		-webkit-transform: rotateX(0deg) rotateY(360deg);
+	}
+	100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		-ms-transform: rotateX(-360deg) rotateY(360deg);
+		-webkit-transform: rotateX(-360deg) rotateY(360deg);
+	}
+}
+@-webkit-keyframes rotate {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		-ms-transform: rotateX(0deg) rotateY(0deg);
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+	}
+	50% {
+		transform: rotateX(0deg) rotateY(360deg);
+		-ms-transform: rotateX(0deg) rotateY(360deg);
+		-webkit-transform: rotateX(0deg) rotateY(360deg);
+	}
+	100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		-ms-transform: rotateX(-360deg) rotateY(360deg);
+		-webkit-transform: rotateX(-360deg) rotateY(360deg);
+	}
+}
+
+.cube {
+	animation: rotate 1.5s infinite linear;
+	-webkit-animation: rotate 1.5s infinite linear;
+}
+
+/* Loading Dots */
+
+.splash-screen {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.splash-screen .loading-dot {
+	font-size: calc(var(--cubeSideLength) * 0.5);
+	margin-top: -80px;
+	position: relative;
+	animation: ease-in-out infinite alternate;
+	animation-name: run;
+	animation-duration: 1.2s;
+}
+
+@keyframes run {
+	0% {
+		left: -90px;
+		color: rgb(81, 81, 81);
+	}
+	50% {
+		color: rgb(0, 0, 0);
+	}
+	100% {
+		left: 90px;
+		color: rgb(81, 81, 81);
+	}
+}
