@@ -8,10 +8,11 @@ let containerCenterPositionX = 0;
 let containerCenterPositionY = 0;
 
 function Head() {
-	useMousePosition();
+	const [clicked, setClicked] = useState(false);
 
+	useMousePosition();
 	return (
-		<div className="container__head">
+		<div className="container__head" onClick={(event) => handleClick(event, clicked, setClicked)}>
 			<div className="head" ref={setPosition}>
 				<div className="eyebrows">
 					<Eyebrow id="leftBrow" mood="brow-happy" />
@@ -85,4 +86,27 @@ function useMousePosition() {
 	}, []);
 
 	return mousePosition;
+}
+
+function handleClick(event, clicked, setClicked) {
+	if (clicked) {
+		setClicked(false);
+		document.getElementById("leftEye").className = "eye-happy";
+		document.getElementById("rightEye").className = "eye-happy";
+		document.getElementById("mouth").className = "happy";
+		document.getElementById("leftBrow").className = "brow-happy";
+		document.getElementById("rightBrow").className = "brow-happy";
+		console.log("eye style: round");
+	} else {
+		setClicked(true);
+		document.getElementById("leftEye").className = "eye-surprised";
+		document.getElementById("rightEye").className = "eye-surprised";
+		document.getElementById("mouth").className = "surprised";
+		document.getElementById("leftBrow").className = "brow-left-surprised";
+		document.getElementById("rightBrow").className = "brow-right-surprised";
+
+		console.log("eye style: default");
+	}
+
+	return event;
 }
