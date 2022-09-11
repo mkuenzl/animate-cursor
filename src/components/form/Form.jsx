@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from "react";
 import "./Form.css";
-import ButtonSwapper from "./utility/ButtonSwapper";
+// import ButtonSwapper from "./utility/ButtonSwapper";
 import RangeSlider from "./utility/RangeSlider";
 
 const Form = () => {
@@ -9,14 +9,15 @@ const Form = () => {
 
 	const sliderValueChanged = useCallback((val) => {
 		const root = document.getElementById("root");
-		root.style.setProperty("--width", `${val}vw`);
+		const unit = window.innerWidth > window.innerHeight ? "vh" : "vw";
+		root.style.setProperty("--width", `${val}${unit}`);
 		setParentVal(val);
 	}, []);
 
 	const sliderProps = useMemo(
 		() => ({
 			min: 5,
-			max: 45,
+			max: 70,
 			value: parentVal,
 			step: 1,
 			onChange: (e) => sliderValueChanged(e),
@@ -26,7 +27,7 @@ const Form = () => {
 
 	return (
 		<div className="input_form">
-			<ButtonSwapper name="Mood" />
+			{/* <ButtonSwapper name="Mood" /> */}
 			<form action="">
 				<div className="container_form-label">
 					<RangeSlider {...sliderProps} classes="additional-css-classes" />
